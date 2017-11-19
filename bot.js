@@ -25,7 +25,7 @@ clansE.setFooter("© ClansBot : Made for The 100 discord server");
 
 bot.on('ready', () => {
     console.log('I am ready!');
-    bot.user.setPresence({status: 'online', game: {name : "🚀 The 100 ™"}});
+    bot.user.setPresence({status: 'dnd', game: {name : "🚀 The 100 ™"}});
     
 });
 
