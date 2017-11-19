@@ -33,7 +33,7 @@ bot.on('ready', () => {
     var args = message.content.substring(prefix.length).split(" ");
     if (!message.content.startsWith(prefix)) return; 
     
-    switch(args[0].toLowerCase) {
+    switch(args[0]) {
 
         case "help":
 
@@ -46,9 +46,9 @@ bot.on('ready', () => {
         break;
 
         case "clan":
-            if (args[1].toLowerCase == "join") {
+            if (args[1] == "join") {
 
-            } else if (args[1].toLowerCase == "leave") {
+            } else if (args[1] == "leave") {
                 
             }
         break;
