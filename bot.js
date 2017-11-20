@@ -29,7 +29,7 @@ bot.on('ready', () => {
     console.log('I am ready!');
     
     // SETS THE BOT TO DND AND THAT GAME
-    bot.user.setPresence({status: 'dnd', game: {name : "🚀 The 100 ™"}});
+    bot.user.setPresence({status: 'idle', game: {name : "🚀 The 100 ™"}});
     
 });
 
