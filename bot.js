@@ -3,9 +3,19 @@ const bot = new Discord.Client();
 const fs = require('fs');
 const prefix = ">";
 
+let Trikru = message.guild.roles.find("name", "Trikru");
+let Azgeda = message.guild.roles.find("name", "Azgeda");
+let Floukru = message.guild.roles.find("name", "Floukru");
+let Sankru = message.guild.roles.find("name", "Sankru");
+let Yujleda = message.guild.roles.find("name", "Yujleda");
+let Ouskjionkru = message.guild.roles.find("name", "Ouskjionkru")
+let Delfikru = message.guild.roles.find("name", "Delfikru");
+let Trishanakru = message.guild.roles.find("name", "Trishanakru");
+let Podakru = message.guild.roles.find("name", "Podakru");
+let Ingranronakru = message.guild.roles.find("name", "Ingranronakru");
+let Boudalankru = message.guild.roles.find("name", "Boudalankru");
+let Louwodakliron = message.guild.roles.find("name", "Louwodakliron");
 
-
-// WHAT THE MESSAGE IS FOR >help
 const helpE = new Discord.RichEmbed();
 helpE.setTitle("Commands");
 helpE.addField("Main Commands", "**>clan join [clan name]** : *Join the clan of your choice!* \n **>clan leave** : *Leave the clan the you are currently in!* \n **>clans** : *A list of all clans!*");
@@ -15,7 +25,6 @@ helpE.setColor([83, 237, 0]);
 helpE.setFooter("© ClansBot : Made for The 100 discord server");
 helpE.setThumbnail("https://www.wpclipart.com/page_frames/full_page_signs/help_page_sign.png");
 
-// WHAT THE MESSAGE IS FOR >clans
 const clansE = new Discord.RichEmbed();
 clansE.setTitle("Clans!");
 clansE.setDescription("Trikru \n Azgeda \n Floukru \n Sankru \n Yujleda \n Ouskejon Kru \n Delfikru \n Trishana Kru \n Podakru \n Ingranrona Kru \n Boudalan Kru \n Louwoda Kliron \n Skaikru");
@@ -24,32 +33,25 @@ clansE.setThumbnail("https://ih0.redbubble.net/image.312073056.0000/pp,550x550.u
 clansE.setFooter("© ClansBot : Made for The 100 discord server");
 
 
-// THIS IS A FUNCTION FOR WHEN THE BOT STARTS
 bot.on('ready', () => {
     console.log('I am ready!');
     
-    // SETS THE BOT TO DND AND THAT GAME
     bot.user.setPresence({status: 'idle', game: {name : "🚀 The 100 ™"}});
     
 });
 
 
-    // THIS IS A FUNCTION FOR WHEN A MESSAGE IS PUT OUT
   bot.on('message', message => {
       
-      // ARGS
     var args = message.content.substring(prefix.length).split(" ");
       
-      // CHECKING TO SEE IF THERE IS A PREFIX
     if (!message.content.startsWith(prefix)) return; 
     
     switch(args[0]) {
             
-        // WHAT HAPPENS WHEN >help IS RAN
             
         case "help":
 
-                                //THIS SENDS THE HELPE MESSAGE
             message.author.send({embed: helpE});
             message.react("👌");
         break;
@@ -60,6 +62,12 @@ bot.on('ready', () => {
 
         case "clan":
             if (args[1] == "join") {
+                
+                if (args[2] == "trikru") {
+
+                    message.member.addRole(Trikru.id);
+                    message.react('👌');
+                    message.reply("you have joined the Trikru clan!");
 
             } else if (args[1] == "leave") {
                 
